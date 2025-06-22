@@ -16,6 +16,4 @@
 *   **Performance:** The current Triton kernel is a straightforward implementation. Optimizations like using shared memory more effectively for `a_tile` and `b_unpacked_tile` (if it were fully formed), instruction reordering, and careful choice of `num_warps` and `num_stages` can significantly impact performance. The current unpacking of B "on-the-fly" for each 4-row segment might not be the most performant way compared to unpacking a larger `B` tile into shared memory first.
 *   **Numerical Stability:** Quantization Aware Training (QAT) with very low bits can be unstable. Learning rates, weight decay, and initialization are crucial. The dequantization factors `A_scale * B_ternary_scale` could become very small or very large, leading to NaNs or Infs. Adding epsilon and clipping might be necessary. The `GradScaler` helps with mixed precision stability.
 *   **Gradient Correctness:** Double-check the STE implementation in `BitMatmulFunction.backward`. Errors here can prevent the model from learning.
-*   **Autotuner:** The autotuner configs provided are basic. More diverse configs, especially considering the `BLOCK_SIZE_K % 4 == 0` constraint, would be beneficial.
-
-This comprehensive set of files should give you a strong starting point for your 1.58-bit CIFAR-10 experiment with Triton! Good luck!
+*   **Autotuner:** The autotuner configs provided are basic. More diverse configs, especially considering the `BLOCK_SIZE_K % 4 == 0` constraint, would be beneficial
