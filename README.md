@@ -30,21 +30,6 @@ The `BitLinear` layer executes a custom forward and backward pass for training:
 
 -----
 
-## 📂 Repository Structure
-
-```
-.
-├── train_cifar10.py     # Main script to train the CNN on CIFAR-10
-├── cifar10_model.py     # Defines the SimpleBitNetCNN model architecture
-├── bit_linear_layer.py  # The core BitLinear layer and custom autograd function
-├── bit_matmul_kernel.py # The custom Triton kernel for matmul
-├── quant_utils.py       # Helper functions for quantization and packing
-├── rms_norm.py          # RMSNorm layer implementation
-└── notes.md             # Development notes and potential improvements
-```
-
------
-
 ## 🛠️ Getting Started
 
 ### Prerequisites
