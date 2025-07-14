@@ -1,7 +1,3 @@
-Of course. Here is a revised `README.md` with a more structured and visually organized layout.
-
------
-
 # 1.58-bit Linear Layer with Triton Kernel 🚀
 
 A PyTorch implementation of a 1.58-bit (ternary) `BitLinear` layer, featuring a custom high-performance Triton kernel for quantized matrix multiplication. This project demonstrates the core concepts of the BitNet architecture on a simple CNN trained on the CIFAR-10 dataset.
